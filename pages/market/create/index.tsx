@@ -87,7 +87,7 @@ export type CreateMarketFormValues = {
   orderbookLength: number;
 };
 
-function addPriorityFeeToTransaction(transaction) {
+function addPriorityFeeToTransaction(transaction: Transaction) {
   const priorityFeeInstruction = ComputeBudgetProgram.setComputeUnitPrice({ microLamports: PRIORITY_RATE });
   transaction.add(priorityFeeInstruction);
   return transaction;
