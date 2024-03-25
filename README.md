@@ -1,6 +1,7 @@
 # Openbook Explorer 👀💧
 
 A explorer dashboard to search for various markets deployed on a [Openbook Dex V3](https://github.com/spacemonkeyforever/openbook-explorer) program.
+## Works when market is congested!
 
 ## Getting Started
 
