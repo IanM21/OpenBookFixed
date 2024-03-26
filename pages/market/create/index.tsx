@@ -536,6 +536,11 @@ const CreateMarket = () => {
       <div className="space-y-4 mb-6">
         <div>
           <h1 className="text-2xl text-slate-200">Create Market</h1>
+          <p className="text-sm text-slate-400">
+            You must set a custom RPC endpoint to create a market. There is no development fee's therefore I am not 
+            providing a base RPC endpoint. You can set a custom RPC endpoint by clicking the settings icon and pasting the URL there.
+          </p>
+
         </div>
         <form onSubmit={handleSubmit(handleCreateMarket)}>
           <div className="space-y-4">
