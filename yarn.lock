@@ -47,27 +47,6 @@
     minimatch "^3.1.2"
     strip-json-comments "^3.1.1"
 
-"@ethersproject/bytes@^5.7.0":
-  version "5.7.0"
-  resolved "https://registry.yarnpkg.com/@ethersproject/bytes/-/bytes-5.7.0.tgz#a00f6ea8d7e7534d6d87f47188af1148d71f155d"
-  integrity sha512-nsbxwgFXWh9NyYWo+U8atvmMsSdKJprTcICAkvbBffT75qDocbuggBU0SJiVK2MuTrp0q+xvLkTnGMPK1+uA9A==
-  dependencies:
-    "@ethersproject/logger" "^5.7.0"
-
-"@ethersproject/logger@^5.7.0":
-  version "5.7.0"
-  resolved "https://registry.yarnpkg.com/@ethersproject/logger/-/logger-5.7.0.tgz#6ce9ae168e74fecf287be17062b590852c311892"
-  integrity sha512-0odtFdXu/XHtjQXJYA3u9G0G8btm0ND5Cu8M7i5vhEcE8/HmF4Lbdqanwyv4uQTr2tx6b7fQRmgLrsnpQlmnig==
-
-"@ethersproject/sha2@^5.5.0":
-  version "5.7.0"
-  resolved "https://registry.yarnpkg.com/@ethersproject/sha2/-/sha2-5.7.0.tgz#9a5f7a7824ef784f7f7680984e593a800480c9fb"
-  integrity sha512-gKlH42riwb3KYp0reLsFTokByAKoJdgFCwI+CCiX/k+Jm2mbNs6oOaCjYQSlI1+XBVejwH2KrmCbMAT/GnRDQw==
-  dependencies:
-    "@ethersproject/bytes" "^5.7.0"
-    "@ethersproject/logger" "^5.7.0"
-    hash.js "1.1.7"
-
 "@hapi/hoek@^9.0.0":
   version "9.3.0"
   resolved "https://registry.yarnpkg.com/@hapi/hoek/-/hoek-9.3.0.tgz#8368869dcb735be2e7f5cb7647de78e167a251fb"
@@ -392,6 +371,21 @@
     crc "^3.8.0"
     jsbi "^3.1.5"
     sha.js "^2.4.11"
+
+"@noble/ed25519@^1.7.0":
+  version "1.7.3"
+  resolved "https://registry.yarnpkg.com/@noble/ed25519/-/ed25519-1.7.3.tgz#57e1677bf6885354b466c38e2b620c62f45a7123"
+  integrity sha512-iR8GBkDt0Q3GyaVcIu7mSsVIqnFbkbRzGLWlvhwunacoLwt4J3swfKhfaM6rN6WY+TBGoYT1GtT1mIh2/jGbRQ==
+
+"@noble/hashes@^1.1.2":
+  version "1.4.0"
+  resolved "https://registry.yarnpkg.com/@noble/hashes/-/hashes-1.4.0.tgz#45814aa329f30e4fe0ba49426f49dfccdd066426"
+  integrity sha512-V1JJ1WTRUqHHrOSh597hURcMqVKVGL/ea3kv0gSnEdsEZ0/+VyPghM1lMNGc00z7CIQorSvbKpuJkxvuHbvdbg==
+
+"@noble/secp256k1@^1.6.3":
+  version "1.7.1"
+  resolved "https://registry.yarnpkg.com/@noble/secp256k1/-/secp256k1-1.7.1.tgz#b251c70f824ce3ca7f8dc3df08d58f005cc0507c"
+  integrity sha512-hOUk6AyBFmqVrv7k5WAw/LpszxVbj9gGN4JRkIX52fdFAj1UA61KXmZDvqVEm+pOyec3+fIeZB02LYa/pWOArw==
 
 "@nodelib/fs.scandir@2.1.5":
   version "2.1.5"
@@ -841,13 +835,15 @@
     "@solana/wallet-adapter-tokenpocket" "^0.4.7"
     "@solana/wallet-adapter-torus" "^0.11.15"
 
-"@solana/web3.js@^1.17.0", "@solana/web3.js@^1.21.0", "@solana/web3.js@^1.30.2", "@solana/web3.js@^1.31.0", "@solana/web3.js@^1.32.0", "@solana/web3.js@^1.36.0", "@solana/web3.js@^1.41.4":
-  version "1.54.0"
-  resolved "https://registry.yarnpkg.com/@solana/web3.js/-/web3.js-1.54.0.tgz#1124ea13a7006eac324a27b49c0c9924e3042476"
-  integrity sha512-Bz0OKYF5UM2vwY6eSTgBBSAVNOk5icyIXbviO99OvX0i2gmRlfd3rocTXRQWHK/tupZ7PBVd6Vux34qpeOr8Yw==
+"@solana/web3.js@^1.17.0", "@solana/web3.js@^1.21.0", "@solana/web3.js@^1.30.2", "@solana/web3.js@^1.31.0", "@solana/web3.js@^1.32.0", "@solana/web3.js@^1.36.0", "@solana/web3.js@^1.54.2":
+  version "1.54.2"
+  resolved "https://registry.yarnpkg.com/@solana/web3.js/-/web3.js-1.54.2.tgz#6bb1eba8e8a2ddc51a7820547a730e16ca7d4aa6"
+  integrity sha512-4NdNOf8Fe63HL7t7Z0OnelGUjmYy8pzbZr/fWC6pHNwsRTwsq8O4dU3Az0SXztWMFkaS9Yak706uG2pGIRRkIA==
   dependencies:
     "@babel/runtime" "^7.12.5"
-    "@ethersproject/sha2" "^5.5.0"
+    "@noble/ed25519" "^1.7.0"
+    "@noble/hashes" "^1.1.2"
+    "@noble/secp256k1" "^1.6.3"
     "@solana/buffer-layout" "^4.0.0"
     bigint-buffer "^1.1.5"
     bn.js "^5.0.0"
@@ -859,9 +855,7 @@
     js-sha3 "^0.8.0"
     node-fetch "2"
     rpc-websockets "^7.5.0"
-    secp256k1 "^4.0.2"
     superstruct "^0.14.2"
-    tweetnacl "^1.0.3"
 
 "@solflare-wallet/sdk@^1.0.11":
   version "1.0.12"
@@ -2742,7 +2736,7 @@ hash-base@^3.0.0:
     readable-stream "^3.6.0"
     safe-buffer "^5.2.0"
 
-hash.js@1.1.7, hash.js@^1.0.0, hash.js@^1.0.3, hash.js@^1.1.7:
+hash.js@^1.0.0, hash.js@^1.0.3, hash.js@^1.1.7:
   version "1.1.7"
   resolved "https://registry.yarnpkg.com/hash.js/-/hash.js-1.1.7.tgz#0babca538e8d4ee4a0f8988d68866537a003cf42"
   integrity sha512-taOaskGt4z4SOANNseOviYDvjEJinIkRgmp7LbKP2YTTmVxWBl87s/uzK9r+44BclBSp2X7K1hqeNfz9JbBeXA==
@@ -3957,7 +3951,7 @@ secp256k1@^3.8.0:
     nan "^2.14.0"
     safe-buffer "^5.1.2"
 
-secp256k1@^4.0.1, secp256k1@^4.0.2:
+secp256k1@^4.0.1:
   version "4.0.3"
   resolved "https://registry.yarnpkg.com/secp256k1/-/secp256k1-4.0.3.tgz#c4559ecd1b8d3c1827ed2d1b94190d69ce267303"
   integrity sha512-NLZVf+ROMxwtEj3Xa562qgv2BK5e2WNmXPiOdVIPLgs6lyTzMvBq0aWTYMI5XCP9jZMVKOcqZLw/Wc4vDkuxhA==
@@ -4267,11 +4261,6 @@ tsutils@^3.21.0:
   integrity sha512-mHKK3iUXL+3UF6xL5k0PEhKRUBKPBCv/+RkEOpjRWxxx27KKRBmmA60A9pgOUvMi8GKhRMPEmjBRPzs2W7O1OA==
   dependencies:
     tslib "^1.8.1"
-
-tweetnacl@^1.0.3:
-  version "1.0.3"
-  resolved "https://registry.yarnpkg.com/tweetnacl/-/tweetnacl-1.0.3.tgz#ac0af71680458d8a6378d0d0d050ab1407d35596"
-  integrity sha512-6rt+RN7aOi1nGMyC4Xa5DdYiukl2UWCbcJft7YhxReBGQD7OAM8Pbxw6YMo4r2diNEA8FEmu32YOn9rhaiE5yw==
 
 type-check@^0.4.0, type-check@~0.4.0:
   version "0.4.0"
