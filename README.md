@@ -2,6 +2,7 @@
 
 A explorer dashboard to search for various markets deployed on a [Openbook Dex V3](https://github.com/spacemonkeyforever/openbook-explorer) program.
 ## Works when market is congested!
+### Note I do not take a developer fee so your own RPC is required to use this properly!
 https://openbook-market-creator.netlify.app/
 
 ## Getting Started
