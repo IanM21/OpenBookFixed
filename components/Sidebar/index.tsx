@@ -3,7 +3,6 @@
 import React, {
   useEffect,
   useRef,
-  useState,
 } from 'react';
 
 import Image from 'next/image';
@@ -24,11 +23,11 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
 
 //   let storedSidebarExpanded = "true";
 
-const storedSidebarExpanded = "true";
+// const storedSidebarExpanded = "true";
 
-  const [sidebarExpanded, setSidebarExpanded] = useState(
-    storedSidebarExpanded === null ? false : storedSidebarExpanded === "true",
-  );
+//   const [sidebarExpanded, setSidebarExpanded] = useState(
+//     storedSidebarExpanded === null ? false : storedSidebarExpanded === "true",
+//   );
 
   // close on click outside
   useEffect(() => {
@@ -56,14 +55,14 @@ const storedSidebarExpanded = "true";
     return () => document.removeEventListener("keydown", keyHandler);
   });
 
-  useEffect(() => {
-    localStorage.setItem("sidebar-expanded", sidebarExpanded.toString());
-    if (sidebarExpanded) {
-      document.querySelector("body")?.classList.add("sidebar-expanded");
-    } else {
-      document.querySelector("body")?.classList.remove("sidebar-expanded");
-    }
-  }, [sidebarExpanded]);
+//   useEffect(() => {
+//     localStorage.setItem("sidebar-expanded", sidebarExpanded.toString());
+//     if (sidebarExpanded) {
+//       document.querySelector("body")?.classList.add("sidebar-expanded");
+//     } else {
+//       document.querySelector("body")?.classList.remove("sidebar-expanded");
+//     }
+//   }, [sidebarExpanded]);
 
   return (
     <aside
