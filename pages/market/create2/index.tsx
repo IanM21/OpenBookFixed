@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-non-null-assertion */
 import { useEffect } from 'react';
 
 import BN from 'bn.js';
@@ -9,7 +10,6 @@ import {
 import { toast } from 'react-toastify';
 import ReactTooltip from 'react-tooltip';
 
-/* eslint-disable @typescript-eslint/no-non-null-assertion */
 import { RadioGroup } from '@headlessui/react';
 import {
   DexInstructions,
