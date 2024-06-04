@@ -22,10 +22,18 @@ const MenuLink = ({item}: Item) => {
   // const goTo = ({link}) => {
   //   location.href = link
   // }
+  async function navigateTo(path: string) {
+    pathname.push(path);
+  }
 
   return (
-    <div onClick={() => location.href=item.path } className={`${styles.container} ${pathname === item.path && styles.active}`}>
-      {/* <Link href={item.path}> */}
+    // <div onClick={() => location.href=item.path } className={`${styles.container} ${pathname === item.path && styles.active}`}>
+    <div onClick={(e) => {
+      e.preventDefault()
+      navigateTo(item.path)
+    }} 
+    className={`${styles.container} ${pathname === item.path && styles.active}`}>
+    {/* <Link href={item.path}> */}
        {item.icon}
        {item.title}
       {/* </Link> */}
