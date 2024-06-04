@@ -1,7 +1,8 @@
 "use client";
 import React, { useState } from 'react';
 
-import Sidebar from '../Sidebar';
+// import Sidebar from '../Sidebar';
+import Sidebar from '../Sidebar2';
 
 // import Header from "../Header";
 
