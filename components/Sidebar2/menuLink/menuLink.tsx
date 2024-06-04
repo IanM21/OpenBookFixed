@@ -32,7 +32,7 @@ const MenuLink = ({item}: Item) => {
       e.preventDefault()
       navigateTo(item.path)
     }} 
-    className={`${styles.container} ${pathname === item.path && styles.active}`}>
+    className={`${styles.container}`}>
     {/* <Link href={item.path}> */}
        {item.icon}
        {item.title}
