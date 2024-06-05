@@ -13,7 +13,7 @@
     "node": ">=16.0.0"
   },
   "dependencies": {
-    "@metaplex-foundation/mpl-token-metadata": "^2.5.2",
+    "@metaplex-foundation/mpl-token-metadata": "2.5.2",
 
     "@coral-xyz/anchor": "^0.29.0",
     "@solana-developers/preset-next": "2.2.0",
