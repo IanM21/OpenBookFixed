@@ -30,6 +30,16 @@ import {
   Transaction,
 } from '@solana/web3.js';
 
+type Form = {
+  // form : {
+    decimals: number,
+    amount: number,
+    metadata: string,
+    symbol: string,
+    tokenName: string,
+  // }
+}
+
 export const CreateToken: FC = () => {
   const { connection } = useConnection();
   const { publicKey, sendTransaction } = useWallet();
@@ -39,7 +49,7 @@ export const CreateToken: FC = () => {
   const [amount, setAmount] = useState('')
   const [decimals, setDecimals] = useState('')
 
-  const onClick = useCallback(async (form: any) => {
+  const onClick = useCallback(async (form: Form) => {
       const lamports = await getMinimumBalanceForRentExemptMint(connection);
       const mintKeypair = Keypair.generate();
 
