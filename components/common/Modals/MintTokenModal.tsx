@@ -1,23 +1,41 @@
-import { Dialog, Transition } from "@headlessui/react";
-import { XMarkIcon } from "@heroicons/react/24/outline";
+import {
+  Fragment,
+  useMemo,
+} from 'react';
+
+import {
+  SubmitHandler,
+  useForm,
+} from 'react-hook-form';
+import { toast } from 'react-toastify';
+
+import {
+  Dialog,
+  Transition,
+} from '@headlessui/react';
+import { XMarkIcon } from '@heroicons/react/24/outline';
 import {
   createAssociatedTokenAccountInstruction,
   createMintToInstruction,
   getAssociatedTokenAddress,
   Mint,
-} from "@solana/spl-token-2";
-import { useConnection, useWallet } from "@solana/wallet-adapter-react";
-import { Transaction, TransactionInstruction } from "@solana/web3.js";
-import { Fragment, useMemo } from "react";
-import { SubmitHandler, useForm } from "react-hook-form";
-import { toast } from "react-toastify";
-import { tokenDecimalsToAtomics } from "../../../utils/numerical";
-import { prettifyPubkey } from "../../../utils/pubkey";
+} from '@solana/spl-token';
+import {
+  useConnection,
+  useWallet,
+} from '@solana/wallet-adapter-react';
+import {
+  Transaction,
+  TransactionInstruction,
+} from '@solana/web3.js';
+
+import { tokenDecimalsToAtomics } from '../../../utils/numerical';
+import { prettifyPubkey } from '../../../utils/pubkey';
 import {
   sendSignedTransaction,
   signTransaction,
-} from "../../../utils/transaction";
-import TransactionToast from "../Toasts/TransactionToast";
+} from '../../../utils/transaction';
+import TransactionToast from '../Toasts/TransactionToast';
 
 type MintTokenFormValues = {
   amount: number;
