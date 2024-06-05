@@ -18,7 +18,7 @@ import {
   getMinimumBalanceForRentExemptMint,
   MINT_SIZE,
   TOKEN_PROGRAM_ID,
-} from '@solana/spl-token-2';
+} from '@solana/spl-token';
 import {
   useConnection,
   useWallet,
