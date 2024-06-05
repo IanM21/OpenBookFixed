@@ -2,6 +2,7 @@
 // import React, { useState } from 'react';
 import React from 'react';
 
+import Header from '../common/Header';
 // import Sidebar from '../Sidebar';
 import Sidebar from '../Sidebar2';
 
@@ -27,6 +28,8 @@ export default function DefaultLayout({
         <div className="relative flex flex-1 flex-col overflow-y-auto overflow-x-hidden">
           {/* <!-- ===== Header Start ===== --> */}
           {/* <Header sidebarOpen={sidebarOpen} setSidebarOpen={setSidebarOpen} /> */}
+
+          <Header />
           {/* <!-- ===== Header End ===== --> */}
 
           {/* <!-- ===== Main Content Start ===== --> */}
