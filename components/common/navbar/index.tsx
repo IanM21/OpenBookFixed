@@ -6,6 +6,7 @@ import {
   MdSearch,
 } from 'react-icons/md';
 
+import WalletButton from '../WalletButton';
 // import { usePathname } from "next/navigation";
 import styles from './navbar.module.css';
 
@@ -25,6 +26,8 @@ const Navbar = () => {
           <MdNotifications size={20} />
           <MdPublic size={20} />
         </div>
+
+        <div><WalletButton/></div>
       </div>
     </div>
   );
