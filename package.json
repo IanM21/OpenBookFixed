@@ -13,8 +13,7 @@
     "node": ">=16.0.0"
   },
   "dependencies": {
-    "@metaplex-foundation/mpl-token-metadata": "2.5.2",
-
+    "@metaplex-foundation/mpl-token-metadata": "^2.5.2",
     "@coral-xyz/anchor": "^0.29.0",
     "@solana-developers/preset-next": "2.2.0",
     "@solana/spl-token": "0.4.1",
@@ -28,7 +27,6 @@
     "encoding": "0.1.13",
     "jotai": "2.6.5",
     "tslib": "^2.3.0",
-
     "apexcharts": "^3.41.0",
     "flatpickr": "^4.6.13",
     "headlessui": "^0.0.0",
@@ -39,7 +37,6 @@
     "react-icons": "^4.10.1",
     "react-router-dom": "^6.14.2",
     "sort-by": "^0.0.2",
-
     "@headlessui/react": "^1.6.5",
     "@heroicons/react": "^2.0.12",
     "@metaplex/js": "^4.12.0",
