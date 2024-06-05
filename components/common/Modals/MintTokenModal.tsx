@@ -19,7 +19,7 @@ import {
   createMintToInstruction,
   getAssociatedTokenAddress,
   Mint,
-} from '@solana/spl-token';
+} from '@solana/spl-token-2';
 import {
   useConnection,
   useWallet,
