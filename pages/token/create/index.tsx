@@ -2,7 +2,8 @@
 
 "use client";
 // import { Metadata } from "next";
-import DefaultLayout from '../../../components/layouts/DefaultLayout';
+// import DefaultLayout from '../../../components/layouts/DefaultLayout';
+import Layout from '../../../components/layouts/layout';
 import { CreateToken } from '../../../components/token/CreateToken';
 
 // import { CreateToken2 } from '../../components/token/CreateToken2';
@@ -17,10 +18,12 @@ import { CreateToken } from '../../../components/token/CreateToken';
 const Token = () => {
   return (
     <>
-      <DefaultLayout>
+      {/* <DefaultLayout> */}
+      <Layout>
         <CreateToken />
         {/* <CreateToken2 /> */}
-      </DefaultLayout>
+      </Layout>
+      {/* </DefaultLayout> */}
     </>
   );
 }
