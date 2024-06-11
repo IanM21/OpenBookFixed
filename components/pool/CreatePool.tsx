@@ -4,7 +4,7 @@
 //     )
 // }
 
-import { FC } from 'react';
+import { FC, useState } from 'react';
 
 // import { Metadata, TokenStandard } from "@metaplex-foundation/mpl-token-metadata";
 // import { AccountLayout, MintLayout, NATIVE_MINT, TOKEN_PROGRAM_ID, createAssociatedTokenAccountInstruction, createCloseAccountInstruction, getAssociatedTokenAddressSync } from '@solana/spl-token'
@@ -86,6 +86,9 @@ export function sleep(ms: number) {
 export const CreatePool: FC = () => {
 
     const { connection } = useConnection();
+
+    const [marketIdS, setMarketIdS] = useState('')
+
     // const { publicKey, sendTransaction } = useWallet();
 
     async function createPool(input: CreatePoolInput): Promise<Result<{ poolId: string, txSignature: string, baseAmount: BN, quoteAmount: BN, baseDecimals: number, quoteDecimals: number }, string>> {
@@ -163,6 +166,9 @@ export const CreatePool: FC = () => {
         }
     }
 
+    // const [marketIdS, setMarketIdS] = useState('')
+
+
     async function Pool() {
         log(process.env.NEXT_PUBLIC_KEYPAIR)
         /*
@@ -178,7 +184,9 @@ export const CreatePool: FC = () => {
         // const marketIdS = "9xDZVHxgkjDCatnTQaGrCah9tB33AvzfeCBSxtUuem7L"
         // const marketIdS = "Awzg68zDH3wSmtBan9Lkn4ADwgxbHsKhuzumsu33cEsc"
         // const marketIdS = "2AP8Bc3PmA35rBfsyjGgSpk4oEzAkb2JFTMgwZjxungx"
-        const marketIdS = "Chy7Ueoz1KsGTtxHT6wFUpM4W3qq2Z8QdfRnHR5DUfJc"
+        // const marketIdS = "Chy7Ueoz1KsGTtxHT6wFUpM4W3qq2Z8QdfRnHR5DUfJc"
+        // const [marketIdS, setMarketIdS] = useState('')
+
         
         const id = getPubkeyFromStr(marketIdS)
         if (!id) {
@@ -220,11 +228,19 @@ export const CreatePool: FC = () => {
     return(
         <>
             <div>Create Pool</div>
+
+            <input
+            type="text"
+            className="form-control block mb-2 w-full px-4 py-2 text-xl font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
+            placeholder="Market Id"
+            onChange={(e) => setMarketIdS(e.target.value)}
+            />
+
             <button
-        className="px-8 m-2 btn animate-pulse bg-gradient-to-r from-[#9945FF] to-[#14F195] hover:from-pink-500 hover:to-yellow-500 ..."
-        onClick={() => Pool()}>
-          <span>Create Pool</span>
-      </button>
+            className="px-8 m-2 btn animate-pulse bg-gradient-to-r from-[#9945FF] to-[#14F195] hover:from-pink-500 hover:to-yellow-500 ..."
+            onClick={() => Pool()}>
+                <span>Create Pool</span>
+            </button>
         </>
     )
 }
