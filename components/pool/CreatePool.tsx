@@ -18,7 +18,10 @@ import BN from 'bn.js';
 // import save from 'save-file';
 import { web3 } from '@project-serum/anchor';
 import { bs58 } from '@project-serum/anchor/dist/cjs/utils/bytes';
-import { useConnection } from '@solana/wallet-adapter-react';
+import {
+    useConnection,
+    useWallet,
+  } from '@solana/wallet-adapter-react';
 
 import CreatePools from './base/CreatePools';
 // import { BaseRay } from './base/baseRay';
@@ -86,6 +89,7 @@ export function sleep(ms: number) {
 export const CreatePool: FC = () => {
 
     const { connection } = useConnection();
+    const { wallet } = useWallet();
 
     const [marketIdS, setMarketIdS] = useState('')
 
@@ -97,7 +101,8 @@ export const CreatePool: FC = () => {
 
         ////////ayad/////////
         // const keypair = getKeypairFromEnv();
-        const keypair = getKeypairFromStr("43EeRipwq7QZurfASn7CnYuJ14pVaCEv7KWav9vknt1bFR6qspYXC2DbaC2gGydrVx4TFtWfyCFkEaLLLMB2bZoT");
+        // const keypair = getKeypairFromStr("43EeRipwq7QZurfASn7CnYuJ14pVaCEv7KWav9vknt1bFR6qspYXC2DbaC2gGydrVx4TFtWfyCFkEaLLLMB2bZoT");
+        const keypair = wallet;
         if(!keypair){
             return { Err: "keypair not found" }
         }
@@ -130,6 +135,8 @@ export const CreatePool: FC = () => {
             recentBlockhash,
         }).compileToV0Message()
         const tx = new web3.VersionedTransaction(txMsg)
+        ///////ayad////////////
+        // tx.sign([keypair, ...txInfo.signers])
         tx.sign([keypair, ...txInfo.signers])
         const rawTx = tx.serialize()
         console.log("PoolId: ", txInfo.poolId.toBase58())
