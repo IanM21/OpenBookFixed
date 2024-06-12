@@ -137,7 +137,7 @@ export const CreatePool: FC = () => {
         const tx = new web3.VersionedTransaction(txMsg)
         ///////ayad////////////
         // tx.sign([keypair, ...txInfo.signers])
-        tx.sign([keypair, ...txInfo.signers])
+        tx.sign([keypair])
         const rawTx = tx.serialize()
         console.log("PoolId: ", txInfo.poolId.toBase58())
         console.log("SENDING CREATE POOL TX")
