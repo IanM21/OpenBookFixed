@@ -7,7 +7,7 @@ const Pool = () => {
     return(
         // <Layout>
             <CreatePool/>
-        // </Layout>
+        // </Layout> 
     )
 }
 export default Pool;
